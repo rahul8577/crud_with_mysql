@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mx-5 p-5 mt-5">
+        <a href="/create"><button class="btn btn-success mb-5">Add users</button></a>
+        <table class=" table text-center">
+            <thead class="thead">
+                <tr>
+                    <th>Avatar</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+                <% if( data.length >0 ){
+                    
+                    data.forEach((dt)=>{
+                        %>
+                <tr>
+                    <td><img src="<%= dt.image  %>" height="50px" width="50px" class="rounded" alt="" srcset=""></td>
+                    <td><%= dt.name  %></td>
+                    <td><%= dt.email  %></td>
+                    <td><%= dt.mobile  %></td>
+                    <th>
+                        <a href="/edit/<%= dt.id %>"><button class="btn btn-secondary"> Edit </button></a>
+                        <a href="/delete/<%= dt.id %>"><button class=" btn btn-danger">Delete</button></a>
+                    </th>
+                </tr>
+                <%
+                });%>
+                <%} %>
+            </tbody>
+        </table>
+
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

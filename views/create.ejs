@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container p-5 mt-5 my-5">
+        <% if(statuse == true){ %>
+            <h2>inserted</h2>
+        <%}%>
+        <div style="display: flex;justify-content: space-between;">
+            <a href="/"><button class="btn btn-success mb-5">All users</button></a>
+            <h1 class="text-center text-success">Insert User Detail</h1>
+        </div>
+
+        <form enctype="multipart/form-data" action="/insert" method="post">
+            <div class="mb-3">
+                <label class="form-label">User Name</label>
+                <input type="text" class="form-control" placeholder="Enter Your Name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">User Email</label>
+                <input type="email" class="form-control" placeholder="Enter Your Email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">User Mobile</label>
+                <input type="number" class="form-control" placeholder="Enter Your Mobile" name="mobile" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">User Avatar</label>
+                <input type="file" class="form-control" name="img" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">User Description</label><br>
+                <textarea name="description" class=" form-control" cols="30" rows="5" placeholder="Enter Description" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
